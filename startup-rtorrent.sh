@@ -11,18 +11,18 @@ groupadd -g $RT_GID rtorrent
 useradd -u $RT_UID -g $RT_GID -d /home/rtorrent -m -s /bin/bash rtorrent
 
 # arrange dirs and configs
-mkdir -p /config/rtorrent/session 
-mkdir -p /config/rtorrent/watch
-mkdir -p /config/log/rtorrent
-if [ ! -e /config/rtorrent/.rtorrent.rc ]; then
-    cp /root/.rtorrent.rc /config/rtorrent/
+mkdir -p /downloads/.rtorrent/session 
+mkdir -p /downloads/.rtorrent/watch
+mkdir -p /downloads/.log/rtorrent
+if [ ! -e /downloads/.rtorrent/.rtorrent.rc ]; then
+    cp /root/.rtorrent.rc /downloads/.rtorrent/
 fi
-ln -s /config/rtorrent/.rtorrent.rc /home/rtorrent/
-chown -R rtorrent:rtorrent /config/rtorrent
+ln -s /downloads/.rtorrent/.rtorrent.rc /home/rtorrent/
+chown -R rtorrent:rtorrent /downloads/.rtorrent
 chown -R rtorrent:rtorrent /home/rtorrent
-chown -R rtorrent:rtorrent /config/log/rtorrent
+chown -R rtorrent:rtorrent /downloads/.log/rtorrent
 
-rm -f /config/rtorrent/session/rtorrent.lock
+rm -f /downloads/.rtorrent/session/rtorrent.lock
 
 # run
 su --login --command="TERM=xterm rtorrent" rtorrent 
