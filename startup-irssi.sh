@@ -65,7 +65,7 @@ then
 	echo "Installing web plugin portion."
 	# Web plugin setup.
 	cd /var/www/rutorrent/plugins/
-	git clone https://github.com/autodl-community/autodl-rutorrent.git autodl-irssi > /dev/null 2>&1
+	git clone https://github.com/zmiguel/autodl-rutorrent.git autodl-irssi > /dev/null 2>&1
 	cd autodl-irssi
 	cp _conf.php conf.php
 	sed -i "s/autodlPort = 0;/autodlPort = ${irssi_port};/" conf.php
