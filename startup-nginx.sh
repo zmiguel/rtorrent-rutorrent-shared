@@ -3,7 +3,7 @@
 set -x
 
 chown -R www-data:www-data /var/www/rutorrent
-cp /rtorrent/.htpasswd /var/www/rutorrent/
+cp /config/.htpasswd /var/www/rutorrent/
 mkdir -p /config/rut/torrents
 chown -R www-data:www-data /config/rut
 mkdir -p /config/log/nginx
