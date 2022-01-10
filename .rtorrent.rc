@@ -10,10 +10,10 @@
 ## Instance layout (base paths)
 method.insert = cfg.basedir,  private|const|string, (cat,"/config/")
 method.insert = cfg.download, private|const|string, (cat,"/download/")
-method.insert = cfg.logs,     private|const|string, (cat,(cfg.basedir),"log/rt/")
+method.insert = cfg.logs,     private|const|string, (cat,(cfg.basedir),"log/")
 method.insert = cfg.logfile,  private|const|string, (cat,(cfg.logs),"rtorrent-",(system.time),".log")
-method.insert = cfg.session,  private|const|string, (cat,(cfg.basedir),"rt/.session/")
-method.insert = cfg.watch,    private|const|string, (cat,(cfg.basedir),"rt/watch/")
+method.insert = cfg.session,  private|const|string, (cat,(cfg.basedir),"rtorrent/session/")
+method.insert = cfg.watch,    private|const|string, (cat,(cfg.basedir),"rtorrent/watch/")
 
 
 ## Create instance directories
@@ -119,7 +119,9 @@ encoding_list = UTF-8
 ##   Groups = connection_* dht_* peer_* rpc_* storage_* thread_* tracker_* torrent_*
 print = (cat, "Logging to ", (cfg.logfile))
 log.open_file = "log", (cfg.logfile)
-log.add_output = "info", "log"
-#log.add_output = "tracker_debug", "log"
+log.add_output = "info", "rtorrent.log"
+log.add_output = "critical", "rtorrent.log"
+log.add_output = "error", "rtorrent.log"
+log.add_output = "tracker_debug", "log"
 
 ### END of rtorrent.rc ###
