@@ -26,7 +26,7 @@
 	$schedule_rand = 10;			// rand for schedulers start, +0..X seconds
 
 	$do_diagnostic = true;
-	$log_file = '/config/log/rut/errors.log';		// path to log file (comment or leave blank to disable logging)
+	$log_file = '/config/rutorrent/errors.log';		// path to log file (comment or leave blank to disable logging)
 
 	$saveUploadedTorrents = true;		// Save uploaded torrents to profile/torrents directory or not
 	$overwriteUploadedTorrents = false;     // Overwrite existing uploaded torrents in profile/torrents directory or make unique name
@@ -61,7 +61,7 @@
 		"localhost",
 	);
 
-	$profilePath = '/rtorrent/.rutorrent';	// Path to user profiles
+	$profilePath = '/config/.rutorrent';	// Path to user profiles
 	$profileMask = 0777;			// Mask for files and directory creation in user profiles.
 						// Both Webserver and rtorrent users must have read-write access to it.
 						// For example, if Webserver and rtorrent users are in the same group then the value may be 0770.
