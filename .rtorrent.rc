@@ -119,9 +119,9 @@ encoding_list = UTF-8
 ##   Groups = connection_* dht_* peer_* rpc_* storage_* thread_* tracker_* torrent_*
 print = (cat, "Logging to ", (cfg.logfile))
 log.open_file = "log", (cfg.logfile)
-log.add_output = "info", "rtorrent.log"
-log.add_output = "critical", "rtorrent.log"
-log.add_output = "error", "rtorrent.log"
+log.add_output = "info", "log"
+log.add_output = "critical", "log"
+log.add_output = "error", "log"
 log.add_output = "tracker_debug", "log"
 
 ### END of rtorrent.rc ###

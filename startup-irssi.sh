@@ -76,3 +76,4 @@ fi
 
 echo "Starting up irssi."
 su --login --command="TERM=xterm irssi" rtorrent
+

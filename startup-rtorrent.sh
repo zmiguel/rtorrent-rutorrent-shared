@@ -25,4 +25,5 @@ chown -R rtorrent:rtorrent /config/log/rtorrent
 rm -f /config/rtorrent/session/rtorrent.lock
 
 # run
-su --login --command="TERM=xterm rtorrent" rtorrent
+su --login --command="TERM=xterm rtorrent" rtorrent 
+
