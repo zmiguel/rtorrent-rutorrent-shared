@@ -7,23 +7,23 @@ sleep 5
 # Set up .autodl dir, and allow for configs to be saved.
 if [ ! -h /home/rtorrent/.autodl ]
 then
-	echo "Linking autodl config directory to /downloads/.autodl."
-	if [ ! -d /downloads/.autodl ]
+	echo "Linking autodl config directory to /rtorrent/.autodl."
+	if [ ! -d /rtorrent/.autodl ]
 	then
-		echo "Did not find /downloads/.autodl existed. Creating it."
-		mkdir /downloads/.autodl
-		chown rtorrent:rtorrent /downloads/.autodl
+		echo "Did not find /rtorrent/.autodl existed. Creating it."
+		mkdir /rtorrent/.autodl
+		chown rtorrent:rtorrent /rtorrent/.autodl
 	fi
-	ln -s /downloads/.autodl /home/rtorrent/.autodl
+	ln -s /rtorrent/.autodl /home/rtorrent/.autodl
 else
 	echo "Do not need to relink the autodl config directory."
 fi
 
-if [ -f /downloads/.autodl/autodl.cfg ]
+if [ -f /rtorrent/.autodl/autodl.cfg ]
 then
 	echo "Found an existing autodl configs. Will not reinitialize."
-	irssi_port=$(grep gui-server-port /downloads/.autodl/autodl2.cfg | awk '{print $3}')
-	irssi_pass=$(grep gui-server-password /downloads/.autodl/autodl2.cfg | awk '{print $3}')
+	irssi_port=$(grep gui-server-port /rtorrent/.autodl/autodl2.cfg | awk '{print $3}')
+	irssi_pass=$(grep gui-server-password /rtorrent/.autodl/autodl2.cfg | awk '{print $3}')
 else
 	echo "Need to set up a new autodl install."
 
@@ -31,13 +31,13 @@ else
 	irssi_port=$((RANDOM%64025+1024))
 	
 	echo "Creating necessary configuration files ... "
-	touch /downloads/.autodl/autodl.cfg
-	cat >/downloads/.autodl/autodl2.cfg<<ADC
+	touch /rtorrent/.autodl/autodl.cfg
+	cat >/rtorrent/.autodl/autodl2.cfg<<ADC
 [options]
 gui-server-port = ${irssi_port}
 gui-server-password = ${irssi_pass}
 ADC
-	chown -R rtorrent:rtorrent /downloads/.autodl
+	chown -R rtorrent:rtorrent /rtorrent/.autodl
 fi
 
 
