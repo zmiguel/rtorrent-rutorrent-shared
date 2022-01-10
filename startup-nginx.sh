@@ -4,8 +4,8 @@ set -x
 
 chown -R www-data:www-data /var/www/rutorrent
 cp /config/.htpasswd /var/www/rutorrent/
-mkdir -p /config/rut/torrents
-chown -R www-data:www-data /config/rut
+mkdir -p /config/rutorrent/torrents
+chown -R www-data:www-data /config/rutorrent
 mkdir -p /config/log/nginx
 chown www-data:www-data /config/log/nginx
 
@@ -40,4 +40,3 @@ else
 fi
 
 nginx -g "daemon off;"
-
