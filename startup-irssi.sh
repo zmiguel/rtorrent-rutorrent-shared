@@ -55,6 +55,8 @@ then
 	git clone https://github.com/autodl-community/autodl-trackers.git autodl-trackers
 	rm -rf /home/rtorrent/.irssi/scripts/AutodlIrssi/trackers
 	cp -r /tmp/autodl-trackers/trackers /home/rtorrent/.irssi/scripts/AutodlIrssi/trackers
+	cd /
+	rm -rf /tmp/autodl-trackers
 	chown -R rtorrent:rtorrent /home/rtorrent/.irssi
 	sed -i -e 's/1.86/1.84/g' /home/rtorrent/.irssi/scripts/AutodlIrssi/SslSocket.pm
 else
